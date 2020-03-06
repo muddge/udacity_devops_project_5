@@ -40,3 +40,5 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+[![CircleCI](https://circleci.com/gh/muddge/udacity_devops_project_5.svg?style=svg)](https://circleci.com/gh/muddge/udacity_devops_project_5)
