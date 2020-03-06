@@ -41,4 +41,42 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Create Flask app in Container
 * Run via kubectl
 
+### Project Summary
+
+Created a local environment to run a Docker container for a Python Flask web application that makes a housing price prediction for a given JSON input, and uploaded image to Docker hub.
+
+* Configured a Dockerfile which sets up a container running the Flask web app code, making sure it passes the hadolint test
+
+* Successfully built Docker container to accept prediction input on local port 80, and added more logging within Docker image to capture input payload
+
+* Uploaded image to repo on personal Docker hub account
+
+* Installed and configured Kubernetes to grab the above image from Docker hub, deploy the image locally, and forward the container port to a host port, and input test successfully returned prediction
+
+* Used circleci/github integration (via circleci config.yml file in github repo) for the project repo to pass the automated test environment (shown by PASSED icon in this Readme)
+
+### Project Files
+
+* app.py: Flask code to set up web server to accept inputs for housing price prediction
+
+* Dockerfile: specifies container base image, commands to install dependencies, and which Python script to run at launch
+
+* make_prediction.sh: script provides test JSON payload to test with app.py running in container
+
+* Makefile: provides shorthand syntax to run python virtual environment setup, pip install, Dockerfile and python lint testing, and validating and running circleci locally
+
+* requirements.txt: required dependencies for Python Flask web app
+
+* run_docker.sh: script to build and run Docker image
+
+* run_kubernetes.sh: script to grab image from Docker hub, create deployment, expose a port for it and use port forwarding to access container web app on port 8000 to local port 80
+
+* upload_docker.sh: script to login to Docker hub, tag and upload image
+
+* .circleci/config.yml: circleci configuration file to run automated testing environment on CircleCI via github integration
+
+* docker_out.txt: Docker logging output from running test prediction
+
+* kubernetes_out.txt: terminal output showing pod name, status, port forwarding and handling text
+
 [![CircleCI](https://circleci.com/gh/muddge/udacity_devops_project_5.svg?style=svg)](https://circleci.com/gh/muddge/udacity_devops_project_5)
