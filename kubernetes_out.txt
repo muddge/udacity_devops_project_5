@@ -1,0 +1,8 @@
+(base) jasons-MacBook-Pro:project-ml-microservice-kubernetes jason$ ./run_kubernetes.sh
+deployment.apps/devops created
+NAME                      READY   STATUS              RESTARTS   AGE
+devops-6fc6b6bdcc-4vnms   0/1     ContainerCreating   0          0s
+service/devops exposed
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
